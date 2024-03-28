@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.cyan,
         ),
         home: Scaffold(
-          appBar: AppBar(title: const Text('Coding Flutter')),
+          appBar: AppBar(
+              title: const Text(
+            'Coding Flutter',
+          )),
           body: const ChangeTimeWidget(),
         ));
   }
@@ -35,17 +38,24 @@ class _ChangeTimeWidget extends State<ChangeTimeWidget> {
 
   @override
   Widget build(BuildContext) {
-    return Column(
-      children: [
-        Text('Waktu Terkini: $time'),
-        ElevatedButton(
-            onPressed: () {
-              setState(() {
-                time = DateTime.now();
-              });
-            },
-            child: const Text('Perbarui Waktu')),
-      ],
+    return Container(
+      padding: EdgeInsets.only(top: 200, left: 70),
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SizedBox(
+            child: Text('Belajar Flutter Bassics'),
+          ),
+          Text('Waktu Terkini: $time'),
+          ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  time = DateTime.now();
+                });
+              },
+              child: const Text('Perbarui Waktu')),
+        ],
+      ),
     );
   }
 }
